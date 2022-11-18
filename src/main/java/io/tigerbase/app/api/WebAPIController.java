@@ -21,7 +21,7 @@ public class WebAPIController {
     BoardRepository boardRepository;
 
     @PostMapping(value = "/board",consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Board> postBoard(@RequestBody Board board,@RequestParam String type){
+    public ResponseEntity<Board> postBoard(@RequestBody Board board){
         System.out.println("board = " + board.toString());
 
         boardRepository.save(board);
